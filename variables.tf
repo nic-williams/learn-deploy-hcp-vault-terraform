@@ -39,3 +39,8 @@ variable "tier" {
   type        = string
   default     = "dev"
 }
+
+variable "vault_addr" {
+  description = "Private endpoint URL of the HCP Vault cluster (e.g. https://<cluster-id>.vault.hashicorp.cloud:8200)."
+  type        = string
+}
