@@ -35,6 +35,4 @@ provider "vault" {
   namespace = "admin"
 }
 
-provider "tfe" {
-  token = var.tfe_token
-}
+provider "tfe" {}
