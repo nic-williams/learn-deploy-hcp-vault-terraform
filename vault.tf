@@ -40,7 +40,7 @@ resource "vault_pki_secret_backend_config_urls" "pki" {
 resource "vault_pki_secret_backend_role" "app_server" {
   backend            = vault_mount.pki.path
   name               = "app-server"
-  allowed_domains    = [data.tfe_outputs.ec2.values.vault_public_ip]
+  allowed_domains    = [data.tfe_outputs.ec2.values["vault_public_dns"]]
   allow_bare_domains = true
   allow_subdomains   = true
   max_ttl            = "720h"

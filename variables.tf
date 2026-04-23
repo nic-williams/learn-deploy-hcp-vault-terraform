@@ -44,3 +44,9 @@ variable "vault_addr" {
   description = "Private endpoint URL of the HCP Vault cluster (e.g. https://<cluster-id>.vault.hashicorp.cloud:8200)."
   type        = string
 }
+
+variable "tfe_token" {
+  description = "HCP Terraform API token used by the TFE provider."
+  type        = string
+  sensitive   = true
+}

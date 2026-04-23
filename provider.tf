@@ -34,3 +34,7 @@ provider "vault" {
   address   = var.vault_addr
   namespace = "admin"
 }
+
+provider "tfe" {
+  token = var.tfe_token
+}
