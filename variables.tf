@@ -41,6 +41,11 @@ variable "tier" {
 }
 
 variable "vault_addr" {
-  description = "Private endpoint URL of the HCP Vault cluster (e.g. https://<cluster-id>.vault.hashicorp.cloud:8200)."
+  description = "Public endpoint URL of the HCP Vault cluster (e.g. https://<cluster-id>.vault.hashicorp.cloud:8200)."
+  type        = string
+}
+
+variable "my_ip" {
+  description = "Your workstation's public IP in CIDR notation (e.g. 1.2.3.4/32)."
   type        = string
 }
