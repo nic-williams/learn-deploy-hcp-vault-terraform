@@ -84,7 +84,7 @@ resource "vault_approle_auth_backend_role_secret_id" "app_server" {
 # ── Outputs ───────────────────────────────────────────────────────────────────
 
 output "vault_public_url" {
-  value = hcp_vault_cluster.learn_hcp_vault.vault_public_endpoint_url
+  value = var.vault_addr
 }
 
 output "approle_role_id" {
