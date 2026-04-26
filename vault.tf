@@ -9,16 +9,6 @@ resource "hcp_vault_cluster" "learn_hcp_vault" {
   cluster_id      = var.cluster_id
   tier            = var.tier
   public_endpoint = true
-
-  ip_allowlist {
-    address     = var.my_ip
-    description = "My workstation"
-  }
-
-  ip_allowlist {
-    address     = "${data.tfe_outputs.ec2.values["vault_public_ip"]}/32"
-    description = "vault-server EC2"
-  }
 }
 
 data "tfe_outputs" "ec2" {
