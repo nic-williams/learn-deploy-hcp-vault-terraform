@@ -37,11 +37,12 @@ provider "hcp" {
   # Configuration options
   # project_id = var.hcp_project
 }
-
+/*
 provider "vault" {
   address   = var.vault_addr
   namespace = "admin"
 }
+*/
 
 provider "tfe" {
   
