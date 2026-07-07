@@ -1,3 +1,4 @@
+/*
 terraform {
   required_providers {
     aws = {
@@ -8,11 +9,11 @@ terraform {
       source = "hashicorp/hcp"
       version = "0.111.0"
     }
-    /*
+    
     vault = {
       source  = "hashicorp/vault"
       version = "~> 4.0"
-    } */
+    } 
     tfe = {
       source  = "hashicorp/tfe"
       version = "~> 0.60"
@@ -45,6 +46,3 @@ provider "vault" {
 }
 */
 
-provider "tfe" {
-  
-}
