@@ -1,14 +1,16 @@
-resource "hcp_hvn" "learn_hcp_vault_hvn" {
+/*
+
+ "hcp_hvn" "learn_hcp_vault_hvn" {
   hvn_id         = var.hvn_id
   cloud_provider = var.cloud_provider
   region         = var.region
 }
 
 resource "hcp_vault_cluster" "learn_hcp_vault" {
-  hvn_id          = hcp_hvn.learn_hcp_vault_hvn.hvn_id
-  cluster_id      = var.cluster_id
-  tier            = var.tier
-  public_endpoint = true
+  hvn_id     = hcp_hvn.learn_hcp_vault_hvn.hvn_id
+  cluster_id = var.cluster_id
+  tier       = var.tier
+  # public_endpoint = true
 }
 
 data "tfe_outputs" "ec2" {
@@ -40,7 +42,7 @@ resource "vault_pki_secret_backend_config_urls" "pki" {
 resource "vault_pki_secret_backend_role" "app_server" {
   backend            = vault_mount.pki.path
   name               = "app-server"
-  allowed_domains    = [data.tfe_outputs.ec2.values["vault_public_dns"]]
+  allowed_domains    = [data.tfe_outputs.ec2.values.instance_hostname] # TODO: replace instance_hostname with the actual output name from the ec2 workspace
   allow_bare_domains = true
   allow_subdomains   = true
   max_ttl            = "720h"
@@ -83,10 +85,6 @@ resource "vault_approle_auth_backend_role_secret_id" "app_server" {
 
 # ── Outputs ───────────────────────────────────────────────────────────────────
 
-output "vault_public_url" {
-  value = var.vault_addr
-}
-
 output "approle_role_id" {
   value = vault_approle_auth_backend_role.app_server.role_id
 }
@@ -95,3 +93,4 @@ output "approle_secret_id" {
   value     = vault_approle_auth_backend_role_secret_id.app_server.secret_id
   sensitive = true
 }
+*/

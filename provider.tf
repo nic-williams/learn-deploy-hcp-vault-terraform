@@ -17,6 +17,14 @@ terraform {
       version = "~> 0.60"
     }
   }
+
+  cloud {
+    organization = "Nicole-Repo"
+
+    workspaces {
+      name = "learn-deploy-hcp-vault-terraform"
+    }
+  }
 }
 
 
@@ -35,4 +43,6 @@ provider "vault" {
   namespace = "admin"
 }
 
-provider "tfe" {}
+provider "tfe" {
+  
+}
